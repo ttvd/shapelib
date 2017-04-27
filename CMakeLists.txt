@@ -95,7 +95,7 @@ if(SHP_DROP_UNABLE_TO_OPEN_MSG)
 endif(SHP_DROP_UNABLE_TO_OPEN_MSG)
 
 if(SHP_BUILD_STATIC)
-  add_library(shp_s STATIC ${lib_SRC})
+  add_library(shp STATIC ${lib_SRC})
 else(SHP_BUILD_STATIC)
   add_library(shp SHARED ${lib_SRC})
 endif(SHP_BUILD_STATIC)
