@@ -94,7 +94,11 @@ if(SHP_DROP_UNABLE_TO_OPEN_MSG)
     )
 endif(SHP_DROP_UNABLE_TO_OPEN_MSG)
 
-add_library(shp ${lib_SRC})
+if(SHP_BUILD_STATIC)
+  add_library(shp_s STATIC ${lib_SRC})
+else
+  add_library(shp SHARED ${lib_SRC})
+endif
 
 if(WIN32 AND NOT CYGWIN)
   set_target_properties(shp
